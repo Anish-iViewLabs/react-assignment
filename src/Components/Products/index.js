@@ -10,14 +10,13 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Box } from "@mui/system";
 import { useSelector } from "react-redux";
 import { selectCategory } from "../../store/categoriesSlice";
-import { ReadMore } from "@mui/icons-material";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [readm, setReadM] = useState(false)
   const [readmore, setReadMore] = useState(0)
   const categoryValue = useSelector(selectCategory);
-  console.log(products, categoryValue);
+  console.log(products, categoryValue, readm);
   useEffect(() => {
     if (categoryValue) {
       fetch(`https://fakestoreapi.com/products/category/${categoryValue}`)
